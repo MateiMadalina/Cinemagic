@@ -34,9 +34,12 @@
                 button {
                     @include button-style;
 
+
                     &:first-of-type {
+                        padding-top: 0.7em;
                         margin-right: 1em;
                         border-radius: 50px;
+
                     }
 
                     &:hover {
@@ -60,4 +63,5 @@
             }
         }
     }
+
 } 

@@ -97,7 +97,6 @@ app
           success: true,
           message: "Movie removed from favorites",
         });
-        console.log(movie);
       })
       .catch((error) => {
         res.status(500).send(error);
@@ -161,7 +160,7 @@ app
     try {
       const response = await Item.findOneAndUpdate(
         { Title: req.body.Title },
-        { Quantity: req.body.Quantity, Price: req.body.Quantity * req.body.Price }
+        { Quantity: req.body.Quantity, Price: req.body.Price }
       );
       res
         .status(200)
@@ -178,7 +177,6 @@ app
         res
           .status(200)
           .json({ success: true, message: "Movie removed from cart" });
-        console.log(item);
       })
       .catch((error) => {
         res.status(400).json({ success: false });

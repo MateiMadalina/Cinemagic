@@ -111,7 +111,7 @@ const onSubmit = (e) => {
       </form>
     </div>) : (
       <div className="no-products">
-        <p>You have yet to select any movies.</p>
+        <p>You haven't added any movies yet.</p>
       </div>
     )}
     </>
