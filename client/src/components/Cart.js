@@ -90,19 +90,19 @@ const onSubmit = (e) => {
         <div className='client'>
           <div>
             <label htmlFor="name">Name: </label>
-            <input name="name" type="text" placeholder="Sherlock Holmes"></input>
+            <input required name="name" type="text" ></input>
           </div>
           <div>
             <label htmlFor="number">Number: </label>
-            <input name="number" type="tel" placeholder="+447258364"></input>
+            <input  required name="number" type="tel" ></input>
           </div>
           <div>
             <label htmlFor="email">Email: </label>
-            <input name="email" type="email" placeholder="sherlocked@gmail.com"></input>
+            <input required name="email" type="email" ></input>
           </div>
           <div>
             <label htmlFor="address">Address: </label>
-            <input name="address" type="text" placeholder="221B Baker Street"></input>
+            <input required name="address" type="text" ></input>
           </div>
         </div>
         <div className='submit-btn'>
