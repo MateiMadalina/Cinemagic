@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import LoadingPage from './LoadingPage';
+import LoadingComponent from '../components/LoadingComponent';
 
 export default function FavoriteMovies() {
 
@@ -42,7 +42,7 @@ export default function FavoriteMovies() {
     }
 
     return loading ? (
-        <LoadingPage/>
+        <LoadingComponent/>
     ) : (
         <div className='wraper'>
             {favorites?.length ?

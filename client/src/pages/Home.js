@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import LoadingPage from './LoadingPage';
-import Movies from './Movies';
+import LoadingComponent from '../components/LoadingComponent';
+import Movies from '../components/Movies';
 import {getMovies} from "../service/CRUDHome";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
   }, [])
 
   return loading ? (
-      <LoadingPage />
+      <LoadingComponent />
     ) : movies ? (
       <Movies movies={movies}/>
     ) : null;
