@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Movie from "./Movie";
 import MovieDetails from "./MovieDetails";
 import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
-import {deleteFromFavorites, getCart, getFavorites} from "../service/CRUDMovies";
+import {addToFavorites, deleteFromFavorites, getCart, getFavorites} from "../service/CRUDMovies";
 
 export default function Movies({ movies }) {
   let [moviesToDisplay, setMoviesToDisplay] = useState(movies);
@@ -74,10 +74,16 @@ const isFavorite = (movie) => {
   return <AiOutlineHeart/>;
 };
 
-const addOrRem = (item) =>
-  isFavorite(item).type.name === <AiOutlineHeart/>.type.name
-    ? addToFavorites(item)
-    : deleteFromFavorites(item,setFavoriteToSave);
+  const addOrRem = async (item) => {
+    if (isFavorite(item).type.name === <AiOutlineHeart/>.type.name) {
+      const response = await addToFavorites(item);
+      console.log(response);
+
+      setFavoriteToSave((previous) => [...previous, item]);
+    } else {
+      deleteFromFavorites(item, setFavoriteToSave);
+    }
+  };
 
 const isInCart = (movie) => {
   if(cart.length) {
@@ -99,17 +105,6 @@ const addToCart = async (movie) => {
   console.log(response);
   setItemToSave(previous => [...previous, movie]);
 }
-
-const addToFavorites = async (movie) => {
-  const request = await fetch("http://localhost:5000/favorites", {
-      method: "POST",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({ ...movie }),
-  });
-  const response = await request.json();
-  console.log(response);
-  setFavoriteToSave((previous) => [...previous, movie]);
-};
 
 const deleteFromCart = async(movie) => {
   const movieToDelete = JSON.parse(JSON.stringify(movie));

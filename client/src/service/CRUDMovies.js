@@ -17,5 +17,15 @@ export const deleteFromFavorites = async (movie, updateFavorites) => {
     updateFavorites((previous) => [...previous.filter(item => item.Title !== movie.Title)]);
 }
 
+export const addToFavorites = async (movie) => {
+    const request = await fetch("http://localhost:5000/favorites", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ ...movie }),
+    });
+    const response = await request.json();
+    console.log(response);
+    return response;
+};
 
 
