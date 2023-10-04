@@ -2,8 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Movie from "./Movie";
 import MovieDetails from "./MovieDetails";
 import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
-import {getMovies} from "../service/CRUDHome";
-import {getCart, getFavorites} from "../service/CRUDMovies";
+import {deleteFromFavorites, getCart, getFavorites} from "../service/CRUDMovies";
 
 export default function Movies({ movies }) {
   let [moviesToDisplay, setMoviesToDisplay] = useState(movies);
@@ -78,7 +77,7 @@ const isFavorite = (movie) => {
 const addOrRem = (item) =>
   isFavorite(item).type.name === <AiOutlineHeart/>.type.name
     ? addToFavorites(item)
-    : deleteFromFavorites(item);
+    : deleteFromFavorites(item,setFavoriteToSave);
 
 const isInCart = (movie) => {
   if(cart.length) {
@@ -126,7 +125,7 @@ const deleteFromCart = async(movie) => {
   setItemToSave(previous => [...previous, movie]);
 }
 
-const updateQuanitity = async (movie, e) => {
+const updateQuantity = async (movie, e) => {
   const currentMovie = cart.find(item => item.Title === movie.Title);
   const quantity = e.target.innerText === "+" ? currentMovie.Quantity + 1 : currentMovie.Quantity - 1;
 
@@ -146,17 +145,6 @@ const updateQuanitity = async (movie, e) => {
 }
 
 
-const deleteFromFavorites = async (movie) => {
-  const request = await fetch("http://localhost:5000/favorites", {
-      method: "DELETE",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({ title: movie.Title }),
-  });
-  const response = await request.json();
-  console.log(response);
-  setFavoriteToSave((previous) => [...previous, movie]);
-};
-
 return (
   <>
   {favorites && renderOne ? (
@@ -169,8 +157,8 @@ return (
      deleteCart={() => deleteFromCart(renderOne)}
      quantity={cart}
      checkCart={isInCart(renderOne)}
-     plusQuantity={(e) => updateQuanitity(renderOne, e)}
-     minusQuantity={(e) => updateQuanitity(renderOne, e)}
+     plusQuantity={(e) => updateQuantity(renderOne, e)}
+     minusQuantity={(e) => updateQuantity(renderOne, e)}
     />
   ) : (
      <div className="movies">
@@ -202,8 +190,8 @@ return (
            deleteCart={() => deleteFromCart(movie)}
            quantity={cart}
            checkCart={isInCart(movie)}
-           plusQuantity={(e) => updateQuanitity(movie, e)}
-           minusQuantity={(e) => updateQuanitity(movie, e)}
+           plusQuantity={(e) => updateQuantity(movie, e)}
+           minusQuantity={(e) => updateQuantity(movie, e)}
           />
         )}
       </div>
