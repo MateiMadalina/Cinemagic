@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import Movie from "./Movie";
 import MovieDetails from "./MovieDetails";
 import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
+import {getMovies} from "../service/CRUDHome";
+import {getCart, getFavorites} from "../service/CRUDMovies";
 
 export default function Movies({ movies }) {
   let [moviesToDisplay, setMoviesToDisplay] = useState(movies);
@@ -15,45 +17,16 @@ export default function Movies({ movies }) {
   const genres = [...new Set(movies.map((movie) => movie.Genre).join(",").replace(/\s/g,'').split(","))];
   const btnRef = useRef();
 
-  const getFavorites = async (abort) => {
-    try {
-      const response = await fetch("http://localhost:5000/favorites", {signal: abort.signal});
-      const data = await response.json();
-      setFavorites(data);
-    } catch (error) {
-      if(error.name === "AbortError") {
-        console.log('Fetch aborted');
-      } else {
-      console.log(error.message);
-      }
-    };
-  };
-
   useEffect(() => {
-    const abortCont = new AbortController();
-    getFavorites(abortCont);
-    return () => abortCont.abort();
-  }, [favoriteToSave]);
-
-  const getCart = async (abort) => {
-    try {
-      const response = await fetch("http://localhost:5000/cart", {signal: abort.signal});
-      const data = await response.json();
-      setCart(data);
-    } catch (error) {
-      if(error.name === "AbortError") {
-        console.log('Fetch aborted');
-      } else {
-      console.log(error.message);
-      }
-    };
-  };
-
-useEffect(() => {
-  const abortCont = new AbortController();
-  getCart(abortCont);
-  return () => abortCont.abort();
-}, [itemToSave]);
+    getFavorites()
+        .then((fav) => {
+          setFavorites(fav);
+        })
+    getCart()
+        .then((cartMovie) => {
+          setCart(cartMovie);
+        })
+  }, [favoriteToSave,itemToSave]);
 
 const zaaz = "Sorted Z-A | Sort A-Z";
 const azza = "Sorted A-Z | Sort Z-A";
