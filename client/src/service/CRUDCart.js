@@ -1,5 +1,9 @@
 export const getCart = async () => {
-    return fetch("http://localhost:5000/cart").then(res => res.json());
+    try {
+        return fetch("http://localhost:5000/cart").then(res => res.json());
+    }catch (error){
+        console.log(error.message);
+    }
 }
 
 export const postOrder = async (order) => {

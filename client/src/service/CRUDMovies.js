@@ -1,9 +1,17 @@
 export const getFavorites = async () => {
-    return fetch("http://localhost:5000/favorites").then(res => res.json());
+    try {
+        return fetch("http://localhost:5000/favorites").then(res => res.json());
+    } catch (error){
+        console.log(error.message);
+    }
 }
 
 export const getCart = async (abort) => {
-    return fetch("http://localhost:5000/cart").then(res => res.json());
+    try {
+        return fetch("http://localhost:5000/cart").then(res => res.json());
+    }catch (error){
+        console.log(error.message);
+    }
 }
 
 export const deleteFromFavorites = async (movie, updateFavorites) => {
