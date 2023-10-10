@@ -4,8 +4,7 @@
 
 Cinemagic is a web application that enables movie enthusiasts to buy their favorite films. Users can easily search for movies by name, sort them by genre or alphabetically, even add them to their favorites. By clicking on the movie's image on the home page, users can access the tutorial and the movie details. The 'Favorites' page allows users to sort movies by duration and rating, while the 'Cart' page displays selected movies and provides a form for completing the order.
 
-![HomePage](https://github.com/MateiMadalina/Cinemagic/assets/116349352/bdfbad41-0d89-44b7-9a02-8ef8480a7b0a)
-
+![HomePage](https://github.com/MateiMadalina/Cinemagic/assets/116349352/ddde489e-9777-4b91-83c5-48adcf1234a8)
 
 ### Technologies Used:
 
