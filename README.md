@@ -39,7 +39,7 @@ Copy the .env.example as .env and fill up the environment variable for your pers
 #### Running the code
 
 ```bash
-cd ./server
+cd server
 nodemon server.js
 ```
 
@@ -59,7 +59,7 @@ npm install
 #### Runnig the code
 
 ```bash
-cd ./client
+cd client
 npm start
 ```
 
