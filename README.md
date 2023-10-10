@@ -21,3 +21,45 @@ We utilized the following technologies to create Cinemagic:
 During development, we faced the following challenges:
 
 - The fetch on the Movie API didn’t work as we expected, so we selected the movies we wanted and created our own database with the help of the API information.
+- Ensuring code organization that is both understandable and easily navigable remains an ongoing challenge, with opportunities for further improvement.
+
+## Setup
+
+### Server side
+#### Install dependencies
+```bash
+cd server
+npm install
+```
+
+#### .env file
+Copy the .env.example as .env and fill up the environment variable for your personal mongodb connecttion url.
+
+#### Running the code
+
+```bash
+cd ./server
+nodemon server.js
+```
+
+It will start the server with nodemon. So it will watch the changes and restart the server if some ot the files changed.
+
+
+
+### Client side
+
+#### Install dependencies
+
+```bash
+cd client
+npm install
+```
+
+#### Runnig the code
+
+```bash
+cd ./client
+npm start
+```
+
+And the create-react-app react-scripts package will start your frontend on the 3000 port and you can visit the http://localhost:3000 on your preferred browser.
