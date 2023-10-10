@@ -11,8 +11,9 @@ Cinemagic is a web application that enables movie enthusiasts to buy their favor
 
 We utilized the following technologies to create Cinemagic:
 
-- **Node.js and Express.js**: These technologies are essential for building and managing the server-side components of our applications, including APIs and database interactions.
-- **MongoDbCompass**: To store some information in the database
+- **Node.js**: A runtime environment for server-side JavaScript execution.
+- **Express.js**: Backend development, creating APIs and database interactions.
+- **MongoDbCompass**: To store some information in the database.
 - **React**: A popular web application library known for its effectiveness in creating interactive and dynamic UI components.
 - **SCSS**: To customize the design of our application.
 
