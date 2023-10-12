@@ -4,7 +4,8 @@
 
 Cinemagic is a web application that enables movie enthusiasts to buy their favorite films. Users can easily search for movies by name, sort them by genre or alphabetically, even add them to their favorites. By clicking on the movie's image on the home page, users can access the tutorial and the movie details. The 'Favorites' page allows users to sort movies by duration and rating, while the 'Cart' page displays selected movies and provides a form for completing the order.
 
-![HomePage](https://github.com/MateiMadalina/Cinemagic/assets/116349352/b8eada30-a7ac-413e-93a3-0e8bc19d2e69)
+![HomePage](https://github.com/MateiMadalina/Cinemagic/assets/116349352/75150981-d79e-46e6-963e-8005ad0f5de7)
+
 
 ### Technologies Used:
 
@@ -68,33 +69,31 @@ And the create-react-app react-scripts package will start your frontend on the 3
 
 As soon as you launch the application, you'll see a list of all the movies available in our database. With such an extensive selection, finding the perfect movie can be a bit challenging. To make your decision easier, we've designed a dedicated page where you can explore all the details of each film, including its trailer. Accessing this page is straightforward - simply click on the movie poster right from the home page.
 
-![movieDetails](https://github.com/MateiMadalina/Cinemagic/assets/116349352/c3de0d87-fe9a-45a3-b92d-70fd6d09c4d4)
+![movieDetails](https://github.com/MateiMadalina/Cinemagic/assets/116349352/73ffdda5-468d-4915-9b15-5972bc9c893f)
+
 
 Also to enhance navigation on the main page, we've incorporated the following search elements:
 
 1. **Genre Filter**: Utilize a select-option to filter movies by specific genres.
 
-![genreFilter](https://github.com/MateiMadalina/Cinemagic/assets/116349352/486df2f0-336f-4c5c-b23b-76ff7009a542)
-
+![genreFilter](https://github.com/MateiMadalina/Cinemagic/assets/116349352/537b3447-470e-4a67-9db2-df5d054b5246)
 
 2. **Alphabetical Sorting**: Easily sort movies alphabetically, or in reverse order, with a convenient button.
 
-![sortedZ-A](https://github.com/MateiMadalina/Cinemagic/assets/116349352/36f9ceed-2903-490c-940b-26b5bfb2aca0)
+![sortedZ-A](https://github.com/MateiMadalina/Cinemagic/assets/116349352/960f92fe-ec57-46c6-932c-273130f75ee8)
 
-  
 3. **Name Search**: Use an input field to search for movies by their complete name or partial name matches.
 
-![SearchMovie](https://github.com/MateiMadalina/Cinemagic/assets/116349352/88f42bce-02bd-4c66-9c53-096b669d879e)
-
+![SearchMovie](https://github.com/MateiMadalina/Cinemagic/assets/116349352/7c3d7f86-e7b9-43d9-a463-3861292bda93)
 
 To add movies to your favorites list, simply click the heart icon located beneath the movie image on the home page. Now, the 'Favorite Movies' page can be accessed through the navigation bar, where you can utilize the filtering buttons located beneath the navigation bar to refine your selections.
 
-![FavoriteMoviePage](https://github.com/MateiMadalina/Cinemagic/assets/116349352/082a1f65-9150-4dc2-9a0f-bac3467dc42d)
+![FavoriteMoviePage](https://github.com/MateiMadalina/Cinemagic/assets/116349352/1617d540-b6eb-4663-908e-0af7f8dd9eed)
 
 Once you've decided which movies you want to purchase and include in your shopping cart, the process is straightforward. Click the 'Add to Cart' button and specify the desired quantity.
 
-![addToCart](https://github.com/MateiMadalina/Cinemagic/assets/116349352/f1d99bfa-bffd-4a77-80c0-05c19bc64587)
+![addToCart](https://github.com/MateiMadalina/Cinemagic/assets/116349352/42ebff73-32ee-41f4-b103-f5d3e53a21c0)
 
 To complete your order, select the shopping cart icon in the navigation bar and proceed to fill out the form located beneath the order summary.
 
-![cartPage](https://github.com/MateiMadalina/Cinemagic/assets/116349352/1a893c5c-c544-4366-bfba-6c941be88e81)
+![cartPage](https://github.com/MateiMadalina/Cinemagic/assets/116349352/10b30c2a-e2bc-4510-96d8-89abedbdd50d)
