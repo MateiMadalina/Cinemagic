@@ -8,7 +8,7 @@ Cinemagic is a web application that enables movie enthusiasts to buy their favor
 
 
 
-### Technologies Used:
+### Technologies Used
 
 We utilized the following technologies to create Cinemagic:
 
